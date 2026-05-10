@@ -1,0 +1,325 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Poppins";
+  src: url("../code/fonts/Poppins-Regular.ttf");
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins";
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, -webkit-transform 0.6s ease;
+  background-color: #FFE4C9;
+  color: #000000;
+}
+body.page-loaded {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+header {
+  position: relative;
+  grid-template-columns: 1fr 5fr;
+  background-color: #ff8c42;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#burger,
+[for=burger] {
+  display: none;
+}
+
+.logo {
+  justify-self: center;
+}
+
+nav {
+  padding-right: 20px;
+  width: 100%;
+  justify-self: start;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  padding: 0;
+  width: 100%;
+  gap: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.nav li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.nav a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 23px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #000000;
+  border: 1px solid #000000;
+  background-color: transparent;
+}
+.nav a.now {
+  background-color: #FFE4C9;
+}
+.nav a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.nav a.button {
+  background-color: #fff;
+  color: #ff8c42;
+  border: 1px solid #ff8c42;
+}
+.nav a.button:hover {
+  background-color: #fff;
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 15px;
+  }
+  [for=burger] {
+    display: block;
+    cursor: pointer;
+    font-size: 32px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+  }
+  [for=burger]::before {
+    content: "≡";
+  }
+  #burger:checked + [for=burger]::before {
+    content: "✕";
+  }
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ff8c42;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    -webkit-transition: max-height 0.4s ease, opacity 0.4s ease;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    padding: 0 20px;
+  }
+  .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    gap: 16px;
+  }
+  .nav li {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .nav a {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: center;
+    border-radius: 25px;
+  }
+  .nav a.button {
+    background-color: #fff;
+    border: 1px solid #ff8c42;
+    color: #ff8c42;
+  }
+  #burger:checked ~ nav {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+footer {
+  text-align: left;
+  margin-top: 10px;
+  background-color: #ff8c42;
+  color: white;
+}
+footer #footer-contacts h2 {
+  font-size: 28px;
+  color: white;
+}
+footer #footer-contacts p {
+  font-size: 19px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+  footer #footer-contacts h2 {
+    font-size: 26px;
+  }
+  footer #footer-contacts p {
+    font-size: 18px;
+  }
+}
+.nav a {
+  width: 50%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+form {
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 14px;
+  font-size: 2em;
+  padding: 100px;
+}
+form label {
+  margin-bottom: 10px;
+  display: block;
+  width: 10em;
+  text-align: left;
+  margin-right: 15px;
+}
+form input[type=text], form input[type=email], form input[type=tel] {
+  width: 70%;
+  background-color: #FFE4C9;
+  -webkit-box-shadow: inset 0 0 1px #ff8c42;
+          box-shadow: inset 0 0 1px #ff8c42;
+  border-radius: 20px/40px;
+}
+form select {
+  font-size: 17px;
+  background-color: #FFE4C9;
+  color: #ff8c42;
+  -webkit-box-shadow: inset 0 0 1px #ff8c42;
+          box-shadow: inset 0 0 1px #ff8c42;
+  border-radius: 20px/40px;
+  padding: 20px;
+}
+form button, form span, form label, form input[type=text], form input[type=email], form input[type=tel], form p, form option {
+  font-size: 1.2em;
+  color: #ff8c42;
+}
+form .first,
+form .second {
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+form .first input,
+form .second input {
+  margin: 0;
+}
+form .tab {
+  display: none;
+}
+form .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #ff8c42;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.6;
+}
+form .step.active {
+  opacity: 1;
+}
+form .step.finish {
+  background-color: #FFA971;
+}
+form button[id$=Btn] {
+  margin-top: 15px;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: #ff8c42;
+  color: white;
+}
+form .butts {
+  float: right;
+}
+
+@media (max-width: 1024px) {
+  form {
+    max-width: 90%;
+    padding: 50px;
+    font-size: 1.5em;
+  }
+  .nav a {
+    padding: 15px 40px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  form {
+    max-width: 95%;
+    padding: 30px;
+    font-size: 1.2em;
+  }
+  form h1 {
+    font-size: 28px;
+  }
+  form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  form input[type=text], form input[type=email], form input[type=tel], form select {
+    width: 100%;
+  }
+  form .butts {
+    float: none;
+    text-align: center;
+  }
+}

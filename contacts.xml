@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+    <contact>
+        <type>phone</type>
+        <value>+375 (25) 934-17-39</value>
+    </contact>
+    <contact>
+        <type>email</type>
+        <value>info@focclub.ru</value>
+    </contact>
+    <contact>
+        <type>instagram</type>
+        <value>@focclub_official</value>
+    </contact>
+</contacts>

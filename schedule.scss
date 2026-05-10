@@ -1,0 +1,93 @@
+@import "mixine.scss";
+@include startSetup;
+@include headerView;
+@include footer;
+h1{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom:15px;
+    margin-top:15px;
+}
+h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom:15px;
+}
+table {
+    margin: auto;
+    width:95%;
+    text-align: center;
+    border-collapse: collapse;
+    tr {
+            border: 3px solid $black;
+            th, td {
+                height: 114px;
+                font-size: 32px;
+                border: 3px solid $black;
+            }
+    }
+}
+svg {
+    width:100%;
+}
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .review {
+        margin:auto;
+        padding:10px;
+        width: 90%;
+        border-radius: 20px;
+        border: 2px solid $orange;
+        background-color: white;
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 18px;
+            color: #706D6D;
+        }
+    }
+}
+@media (max-width: 1024px) {
+    h1, h2 {
+        font-size: 30px;
+    }
+    table {
+    tr {
+            border: 3px solid $black;
+            th, td {
+                height: 92px;
+                font-size: 25px;
+            }
+    }
+}
+.review {
+    width:85%;
+}
+}
+@media (max-width: 768px) {
+     section h1, section ~ h1 {
+        font-size: 28px;
+    }
+    table {
+        display:block;
+        width: 100%;
+        overflow-x: auto;
+        padding: 0 10px;
+        margin-bottom: 15px;
+        tr {
+             th,td {
+            font-size: 20px;
+        }
+        }
+    }
+    .reviews {
+        grid-template-columns: 1fr;
+        .review {
+            width: 90%;
+            margin-bottom: 10px;
+        }
+    }
+}

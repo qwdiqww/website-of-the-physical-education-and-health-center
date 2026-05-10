@@ -1,0 +1,79 @@
+@import "mixine.scss";
+@include startSetup;
+@include headerView;
+@include footer;
+main svg {
+    width: 100%;
+}
+section {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 30px 30px;
+    figure {
+        img {
+            object-fit: cover;
+            aspect-ratio: 665/708;
+            width:90%;
+            border-radius: 95px;
+            overflow:hidden;
+        }
+    }
+    .service-text {
+        h2 {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            &.time {
+                padding: 10px;
+                border-radius: 15px;
+                box-shadow: 0 2px 5px $black;
+            }
+        }
+    }
+}
+ul {
+    list-style: none;
+}
+@media (max-width: 1024px) {
+    section {
+    .service-text {
+        h1 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 25px;
+        }
+        figure img {
+            border-radius: 65px;
+        }
+    }
+}
+}
+@media (max-width: 768px) {
+    section {
+        grid-template-columns: 1fr;
+        text-align: center;  
+    figure {
+        img {
+            border-radius: 40px;
+        }
+    }
+        .service-text {
+            h2 {
+                font-size: 30px;
+                margin-bottom: 5px;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+}
+}

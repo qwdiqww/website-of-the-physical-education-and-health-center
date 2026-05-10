@@ -1,0 +1,182 @@
+$background: #FFE4C9;
+$orange: #ff8c42;
+$black : #000000;
+$text-gray: #666;
+$text-dark: #222;
+@mixin startSetup  {
+@font-face {
+    font-family: 'Poppins';
+    src: url('../code/fonts/Poppins-Regular.ttf');
+}
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins';
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease; 
+    background-color: $background;
+    color: $black;
+    &.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+}
+@mixin headerView {
+    header {
+    position:relative;
+    grid-template-columns: 1fr 5fr;
+    background-color: $orange;
+    display: grid;
+    align-items: center;
+}
+#burger,
+[for="burger"] {
+  display: none;
+}
+.logo {
+    justify-self: center;
+}
+nav {
+    padding-right: 20px;
+    width:100%;
+    justify-self: start;
+}
+.nav {
+    list-style: none;
+    padding: 0;
+    padding: 0;
+    width: 100%;
+    gap: 36px;
+    display: flex;
+    li {
+        flex: 1;
+    }
+    a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 23px;          
+  transition: all 0.3s ease;
+  color: $black;
+  border: 1px solid $black;
+  background-color: transparent;
+    &.now {
+        background-color: $background;
+    }
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    &.button {
+           background-color: #fff;
+  color: $orange;
+  border: 1px solid $orange; 
+    &:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+    }
+    }
+}
+}
+@media (max-width:768px) {
+    .logo {
+        margin-left: 15px;
+    }
+    [for="burger"] {
+        display: block;
+        cursor:pointer;
+        font-size:32px;
+        position:absolute;
+        right:20px;
+        top:20px;
+        z-index:1000;
+    }
+    [for="burger"]::before {
+        content: "\2261";
+    }
+    #burger:checked + [for="burger"]::before {
+        content: "\2715";
+    }
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;           
+        right: 0;
+        background: $orange;
+        width: 100%;
+        text-align: center;
+        z-index: 999;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease,opacity 0.4s ease;
+        padding: 0 20px;
+        }  
+        .nav {
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 16px;
+        li {
+            margin: 10px 0;
+            width: 100%;
+        }
+        a {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto; 
+            padding: 18px 20px; 
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 25px;
+            
+            &.button {
+                background-color: #fff;
+                border: 1px solid $orange;
+                color: $orange;
+            }
+        }
+    }
+    #burger:checked ~ nav {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+}
+@mixin footer {
+    footer {
+    text-align: left;
+    margin-top: 10px;;
+    background-color: $orange;
+    color: white;
+    #footer-contacts {
+            h2 {
+                text-align: left;
+                font-size: 28px;
+                color: white;
+            }
+
+            p {
+                font-size: 19px;
+                color: white;
+            }
+        }
+}
+    @media (max-width:768px) {
+    footer {
+        text-align: center;
+        #footer-contacts {
+                h2 { font-size: 26px; }
+                p { font-size: 18px; }
+            }
+    }
+    }
+}
