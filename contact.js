@@ -1,4 +1,4 @@
-           window.addEventListener('load', () => {
+window.addEventListener('load', () => {
     document.body.classList.add('page-loaded');
 });
 async function loadContacts() {
@@ -46,5 +46,4 @@ function getLabel(type) {
     return labels[type] || type;
 }
 
-// Запуск
 document.addEventListener('DOMContentLoaded', loadContacts);

@@ -1,4 +1,23 @@
 @charset "UTF-8";
+#responseMessage {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
 @font-face {
   font-family: "Poppins";
   src: url("../code/fonts/Poppins-Regular.ttf");
@@ -252,7 +271,7 @@ nav {
           transform: scale(1.05);
 }
 
-.features_conteiner h2 {
+.features_conteiner .notitle {
   display: none;
 }
 .features_conteiner {
@@ -292,6 +311,7 @@ footer {
   color: white;
 }
 footer #footer-contacts h2 {
+  text-align: left;
   font-size: 28px;
   color: white;
 }

@@ -24,10 +24,15 @@ function nextPrev(n) {
     if (n == 1 && !validateForm()) return false;
     x[currentTab].style.display = "none";
     currentTab = currentTab+n;
-    if (currentTab >= x.length) {
-        document.getElementById("reg").submit();
-        return false;
-    }
+   if (currentTab >= x.length) {
+    const massage = document.getElementById('responseMassage');
+    massage.classList.add('show');
+    setTimeout(() => massage.classList.remove('show'), 3000);
+    document.getElementById("reg").reset();
+    currentTab = 0;
+    showTab(currentTab);
+    return false;
+}
     showTab(currentTab);
 }
 

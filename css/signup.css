@@ -1,4 +1,72 @@
 @charset "UTF-8";
+@-webkit-keyframes slideInOut {
+  0% {
+    right: -600px;
+    opacity: 0;
+  }
+  15% {
+    right: 20px;
+    opacity: 1;
+  }
+  70% {
+    right: 20px;
+    opacity: 1;
+  }
+  100% {
+    right: -600px;
+    opacity: 0;
+  }
+}
+@keyframes slideInOut {
+  0% {
+    right: -600px;
+    opacity: 0;
+  }
+  15% {
+    right: 20px;
+    opacity: 1;
+  }
+  70% {
+    right: 20px;
+    opacity: 1;
+  }
+  100% {
+    right: -600px;
+    opacity: 0;
+  }
+}
+#responseMassage {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: -600px;
+  background: #34A853;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  padding: 15px 25px;
+  border-radius: 5px;
+  opacity: 0;
+  -webkit-transition: right 0.5s ease, opacity 0.5s ease;
+  transition: right 0.5s ease, opacity 0.5s ease;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+#responseMassage.show {
+  display: block;
+  -webkit-animation: slideInOut 3s ease forwards;
+          animation: slideInOut 3s ease forwards;
+  opacity: 1;
+  right: 20px;
+}
+@media (max-width: 768px) {
+  #responseMassage {
+    padding: 10px;
+    font-size: smaller;
+  }
+}
+
 @font-face {
   font-family: "Poppins";
   src: url("../code/fonts/Poppins-Regular.ttf");
@@ -178,6 +246,7 @@ footer {
   color: white;
 }
 footer #footer-contacts h2 {
+  text-align: left;
   font-size: 28px;
   color: white;
 }
@@ -208,7 +277,7 @@ h1 {
   text-align: center;
 }
 
-form {
+#reg {
   max-width: 1200px;
   margin: 30px auto;
   background-color: #fff;
@@ -216,21 +285,21 @@ form {
   font-size: 2em;
   padding: 100px;
 }
-form label {
+#reg label {
   margin-bottom: 10px;
   display: block;
   width: 10em;
   text-align: left;
   margin-right: 15px;
 }
-form input[type=text], form input[type=email], form input[type=tel] {
+#reg input[type=text], #reg input[type=email], #reg input[type=tel] {
   width: 70%;
   background-color: #FFE4C9;
   -webkit-box-shadow: inset 0 0 1px #ff8c42;
           box-shadow: inset 0 0 1px #ff8c42;
   border-radius: 20px/40px;
 }
-form select {
+#reg select {
   font-size: 17px;
   background-color: #FFE4C9;
   color: #ff8c42;
@@ -239,12 +308,12 @@ form select {
   border-radius: 20px/40px;
   padding: 20px;
 }
-form button, form span, form label, form input[type=text], form input[type=email], form input[type=tel], form p, form option {
+#reg button, #reg span, #reg label, #reg input[type=text], #reg input[type=email], #reg input[type=tel], #reg p, #reg option {
   font-size: 1.2em;
   color: #ff8c42;
 }
-form .first,
-form .second {
+#reg .first,
+#reg .second {
   font-size: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -254,14 +323,14 @@ form .second {
           align-items: center;
   gap: 5px;
 }
-form .first input,
-form .second input {
+#reg .first input,
+#reg .second input {
   margin: 0;
 }
-form .tab {
+#reg .tab {
   display: none;
 }
-form .step {
+#reg .step {
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -271,13 +340,13 @@ form .step {
   display: inline-block;
   opacity: 0.6;
 }
-form .step.active {
+#reg .step.active {
   opacity: 1;
 }
-form .step.finish {
+#reg .step.finish {
   background-color: #FFA971;
 }
-form button[id$=Btn] {
+#reg button[id$=Btn] {
   margin-top: 15px;
   display: inline-block;
   width: 200px;
@@ -286,7 +355,7 @@ form button[id$=Btn] {
   background-color: #ff8c42;
   color: white;
 }
-form .butts {
+#reg .butts {
   float: right;
 }
 
@@ -302,24 +371,35 @@ form .butts {
   }
 }
 @media (max-width: 768px) {
-  form {
-    max-width: 95%;
-    padding: 30px;
-    font-size: 1.2em;
+  h1 {
+    font-size: 26px;
+    padding: 0 10px;
   }
-  form h1 {
-    font-size: 28px;
+  #reg {
+    padding: 25px;
+    font-size: 1em;
   }
-  form label {
+  #reg label {
     width: 100%;
-    text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
   }
-  form input[type=text], form input[type=email], form input[type=tel], form select {
+  #reg input[type=text],
+  #reg input[type=email],
+  #reg input[type=tel],
+  #reg select {
     width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
   }
-  form .butts {
+  #reg .first,
+  #reg .second {
+    font-size: 1em;
+  }
+  #reg .butts {
     float: none;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }

@@ -78,7 +78,9 @@ svg {
         padding: 0 10px;
         margin-bottom: 15px;
         tr {
+            border: 2px solid black;
              th,td {
+            height: 80px;
             font-size: 20px;
         }
         }

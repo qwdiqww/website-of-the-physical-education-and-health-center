@@ -1,4 +1,66 @@
 @charset "UTF-8";
+@-webkit-keyframes slideInOut {
+  0% {
+    right: -600px;
+    opacity: 0;
+  }
+  15% {
+    right: 20px;
+    opacity: 1;
+  }
+  70% {
+    right: 20px;
+    opacity: 1;
+  }
+  100% {
+    right: -600px;
+    opacity: 0;
+  }
+}
+@keyframes slideInOut {
+  0% {
+    right: -600px;
+    opacity: 0;
+  }
+  15% {
+    right: 20px;
+    opacity: 1;
+  }
+  70% {
+    right: 20px;
+    opacity: 1;
+  }
+  100% {
+    right: -600px;
+    opacity: 0;
+  }
+}
+#responseMassage {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: -600px;
+  background: #34A853;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  padding: 15px 25px;
+  border-radius: 5px;
+  opacity: 0;
+  -webkit-transition: right 0.5s ease, opacity 0.5s ease;
+  transition: right 0.5s ease, opacity 0.5s ease;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+#responseMassage.show {
+  display: block;
+  -webkit-animation: slideInOut 3s ease forwards;
+          animation: slideInOut 3s ease forwards;
+  opacity: 1;
+  right: 20px;
+}
+
 @font-face {
   font-family: "Poppins";
   src: url("../code/fonts/Poppins-Regular.ttf");
@@ -277,7 +339,11 @@ svg {
     padding: 0 10px;
     margin-bottom: 15px;
   }
+  table tr {
+    border: 2px solid black;
+  }
   table tr th, table tr td {
+    height: 80px;
     font-size: 20px;
   }
   .reviews {
